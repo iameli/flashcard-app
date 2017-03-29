@@ -8,7 +8,8 @@
   "scripts": {
     "start": "[ \"$NODE_ENV\" = \"production\" ] && npm run serve:server:production || npm run serve:server:dev",
     "dev": "run-p watch serve:server:dev",
-    "test": "mocha --recursive --require babel-polyfill --compilers js:babel-register",
+    "lint": "eslint client server",
+    "test": "npm run lint && mocha --recursive --require babel-polyfill --compilers js:babel-register",
     "repl": "babel-node",
     "build": "run-s build:*",
     "clean": "rm -rf build",
@@ -76,6 +77,8 @@
     "chokidar-cli": "^1.2.0",
     "clean-css": "^3.4.19",
     "enzyme": "^2.7.1",
+    "eslint": "^3.18.0",
+    "eslint-plugin-react": "^6.10.3",
     "json": "^9.0.4",
     "mocha": "^3.0.1",
     "mustache": "^2.2.1",
